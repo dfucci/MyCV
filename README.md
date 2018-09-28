@@ -1,4 +1,8 @@
 Davide Fucci CV Template
 
 
-Build like so: `xelatex --shell-escape cv`
+Build  
+```xelatex --shell-escape cv
+bibtex cv
+xelatex --shell-escape cv
+xelatex --shell-escape cv```
