@@ -39,7 +39,7 @@
 %% Change as needed. Or just add me as a coauthor. Only some of these are
 %% used below in the hyperref declaration and address banner section.
 \def\myauthor{Davide Fucci}
-\def\mytitle{Dr.}
+\def\mytitle{Davide Fucci CV}
 \def\mycopyright{\myauthor}
 \def\mykeywords{}
 \def\mybibliostyle{plain}
@@ -49,6 +49,8 @@
 \def\myaddress{Fachbereich Informatik}
 \def\myemail{fucci@informatik.uni-hamburg.de}
 \def\myweb{http://dfucci.ink}
+\def\mygithub{https://github.com/dfucci}
+\def\mytwitter{https://twitter.com/dfucci\_}
 \def\myphone{+49 163 400 6714}
 
 
@@ -65,8 +67,12 @@
 %%% Required style files
 %%%------------------------------------------------------------------------
 \usepackage{url,fancyhdr}
+\usepackage{fontawesome}
 \usepackage[ampersand]{easylist}
-%%\usepackage{revnum} % for reverse-numbered publications (revnumerate environment) if needed.
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
+\usepackage{xstring}
 
 %% needed for xelatex to work
 \usepackage{fontspec}
@@ -77,18 +83,20 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{DarkBlue}{HTML}{265B8C}
 
+
 %% hyperlinks
-\usepackage[xetex,
-	colorlinks=true,
-	urlcolor=DarkBlue,
-	plainpages=false,
-  	pdfpagelabels,
-  	bookmarksnumbered,
-  	pdftitle={\mytitle},
-  	pagebackref,
-  	pdfauthor={\myauthor},
-  	pdfkeywords={\mykeywords}
-  	]{hyperref}
+% \usepackage[xetex,
+% 	colorlinks=true,
+% 	urlcolor=DarkBlue,
+% 	plainpages=false,
+%   	pdfpagelabels,
+%   	bookmarksnumbered,
+%   	pdftitle={\mytitle},
+%   	pagebackref,
+%   	pdfauthor={\myauthor},
+%   	pdfkeywords={\mykeywords}
+% 	  ]{hyperref}
+% \makeatletter\let\@bibitem\saved@bibitem\makeatother
 
 \usepackage{marvosym}
 
@@ -99,6 +107,11 @@
 %%% Document
 %%%------------------------------------------------------------------------
 \begin{document}
+
+%% For managing publication list
+\nobibliography{Fucci_Davide}
+\bibliographystyle{plain}
+
 
 %% Choose fonts for use with xelatex
 %% Minion and Myriad are widely available, from Adobe.
@@ -128,13 +141,13 @@
 
 %% No bullets on labels
 \renewcommand{\labelitemi}{~}
-
+\newcommand{\myname}[1]{\textbf{\underline{Davide Fucci}}}
 %% Custom hanging indent for vita items
 \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
 %\def\ind{\hangindent=18pt\hangafter=1 \noindent}
 \def\labelitemi{~}
 \renewcommand{\labelitemii}{~}
-
+\renewcommand{\labelenumi}{\S\theenumi.}
 %%%------------------------------------------------------------------------
 %%% Page layout
 %%%------------------------------------------------------------------------
@@ -158,22 +171,30 @@
 %%%------------------------------------------------------------------------
 % \begin{absolutelynopagebreak}
 \begin{minipage}[t]{2.95in}
- \flushright {\footnotesize \href{https://mast.informatik.uni-hamburg.de/}{Applied Computer Science Research Group\\ \vspace{-0.04in} Fachbereich Informatik}  \\ University of Hamburg\\ \vspace{-0.04in} Vogt-Koelln-Strasse, 30 \\ \vspace{-0.04in} Hamburg, 22527 \\ \vspace{-0.05in} Germany}
-
+{\footnotesize Applied Computer Science Research Group\vspace{-0.04in}\\
+\noindent Fachbereich Informatik \vspace{-0.04in}\\
+\noindent University of Hamburg \vspace{-0.01in}\\
+\noindent Vogt-Koelln-Strasse, 30 \vspace{-0.04in}\\
+\noindent Hamburg, 22527 \vspace{-0.04in}\\
+\noindent Germany
+}
 \end{minipage}
-\hfill
 %\begin{minipage}[t]{0.0in}
 % dummy (needed here)
 %\end{minipage}
-\hfill
 \begin{minipage}[t]{1.7in}
-  \flushright \footnotesize Phone: \myphone \\
-  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
-  {\scriptsize  \vspace{-0.03in} \texttt{\href{\myweb}{\myweb}}}
+  {\footnotesize \faPhone~\myphone \\ 
+  \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
+   \noindent \faSitemap~\texttt{dfucci.ink} \vspace{-0.03in}\\
+  \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
+ \noindent  \faTwitter~\texttt{dfucci\_}
+ }
 \end{minipage}
 
 
-\medskip
+\bigskip
+\bigskip
+\bigskip
 
 %% Name
 \noindent{\huge {\textsc{Davide Fucci}}}
@@ -208,8 +229,10 @@
 \noindent{\bf \em University of Oulu}, \emph{Oulu, Finland} \vspace{0.01in} \dates{2013--2016}
 \newline Ph.D. in Software Engineering {\em with honors, May 2016}
 \newline Advisors: Prof. Burak Turhan \amper{} Prof. Markku Oivo 
+\newline Thesis title: {\em The Role of Process Conformace and Developers' Skills in the Context of Test-driven Development.}
 
 \bigskip
+
 
 \noindent{\bf \em University of Oulu}, \emph{Oulu, Finland} \vspace{0.01in}  \dates{2010--2012}
 \newline\noindent Master degree in Computer Science{\em grade 4/5, September 2012}
@@ -238,6 +261,10 @@
 \newline\noindent {\bf \em Post-doctoral Researcher}
 \bigskip
 
+\noindent Carnegie Mellon University (Silicon Valley campus), \emph{Mountain View, CA, USA} \vspace{0.01in}  \dates{01/2015--07/2015}
+\newline\noindent {\bf Visiting Researcher}
+\bigskip
+
 \noindent PaneMerkille Ay, \emph{Oulu, Finland} \vspace{0.01in} \dates{07/2012--12/2014}
 \newline\noindent {\bf \em Founder \amper{} CTO}
 \newline\noindent Founded a startup as a spin-off of university project.
@@ -252,205 +279,79 @@
 
 %% Teaching Experience
 \medskip
-\marginhead{Teaching \newline Experience \newline (Classroom)}
+\marginhead{Teaching \newline Experience \newline}
 
-\noindent {\bf Instructor, Designer},  \dates{Spring 2018}
-\newline\noindent CS4240: Large-Scale Parallel Data Processing \dates{Northeastern}
-%\newline\noindent Northeastern University senior-level undergraduate course on big data \dates{Northeastern}
-%\newline\noindent processing, covering Spark, Hadoop, TensorFlow, amongst others.
-%\newline (\textasciitilde40 students)
+\noindent {\bf Instructor}  \dates{Spring semester 2017--2018}
+\newline\noindent Empirical Software Engineering \dates{University of Hamburg}
 \bigskip
 
-\noindent {\bf Instructor, Designer}, \dates{Fall 2016}
-\newline\noindent CS7680: Programming Models for Distributed Computation \dates{Northeastern}
-%\newline\noindent Northeastern University PhD-level course on programming models for \dates{Northeastern}
-%\newline\noindent distributed systems. (\textasciitilde20 students)
+\noindent {\bf Instructor}  \dates{Spring semester 2017--2018}
+\newline\noindent Software Patterns \dates{University of Hamburg}
 \bigskip
 
-\noindent {\bf Co-Instructor, Co-Designer}, {(\em with Viktor Kun\v cak \& Martin Odersky)} \dates{Spring 2016}
-\newline\noindent CS 206: Parallelism \& Concurrency \dates{EPFL}
+\noindent {\bf Instructor, Creator} \dates{Fall 2016}
+\newline\noindent Advanced Topics in Software Testing \dates{University of Bari}
 \bigskip
 
-\noindent {\bf Co-Instructor, Co-Designer}, {(\em with Viktor Kun\v cak \& Martin Odersky)} \dates{Spring 2015}
-\newline\noindent CS 212: Reactive Programming \& Parallelism \dates{EPFL}
+\noindent {\bf Instructor} \dates{Spring semester 2014--2016}
+\newline\noindent Software Quality and Testing \dates{University of Oulu}
 \bigskip
 
-\noindent {\bf (Lead) Teaching Assistant}, \dates{Fall 2011-2014}
-\newline\noindent CS 201: Functional Programming \dates{EPFL}
-%\newline\noindent Required EPFL undergraduate course on functional \& logic programming \dates{EPFL}
-%\newline\noindent (\textasciitilde160 students)
+\noindent {\bf Co-Instructor, Co-Creator} \dates{Spring 2013}
+\newline\noindent Software Quality and Testing \dates{University of Oulu}
 \bigskip
 
-%\noindent {\bf Instructor, Co-Designer}, {\em Reactive Programming \& Parallelism} \dates{Spring 2015 \& 2016}
-%\newline\noindent EPFL Undergraduate course on parallel, distributed, and asynchronous \dates{EPFL}
-%\newline\noindent programming (90 -- 150 students)
-%\bigskip
-
-
-
-%\begin{easylist}[itemize]	
-%& General introduction to distributed systems for big data
-%\newline up through shuffling and optimizations like partitioning, 
-%\newline as well as the basics of data analytics.
-%
-%& Between March-November 2017, over 120,000 registered learners. 
-%\end{easylist}
+\noindent {\bf Instructor}  \dates{Fall semester 2013--2015}
+\newline\noindent Global and Distribuited Software Engineering \dates{University of Oulu}
 \bigskip
 
-
-%\noindent {\bf Instructor, Co-Designer}, {\em Parallel Programming \& Data Analysis} \dates{2015}
-%\newline\noindent Upcoming Coursera MOOC on parallel, distributed, and asynchronous
-%\newline\noindent programming.
-%\bigskip
-
-
-%\noindent {\bf Instructor}, {\em Scala as a Research Tool} \dates{2013}
-%\newline\noindent ECOOP Tutorial
-% \bigskip
-
-
-% \noindent {\bf Teaching Assistant}, {\em Programming Principles} \dates{2011, 2014}
-% \newline\noindent Required EPFL Undergraduate course on functional and logic programming
-% \newline\noindent (\textasciitilde160 students)
-
+\noindent {\bf Supervisor} \dates{Fall semester 2013--2015}
+\newline\noindent Project II \dates{University of Oulu}
 \bigskip
 \bigskip
 %% Publications: Journals
-\marginhead{Publications: \newline Journals}
-% \medskip
+\marginhead{Publications \newline \textit{Journals}}
 
-%% Use revnumerate environment if numbered publications are needed.
-%% (Include it above in the preamble).
-%% \renewcommand{\labelenumi}{\textsc{a}\theenumi.}
-%% \begin{revnumerate}
+\begin{etaremune}
+\item \bibentry{fucci2018need}
+\item \bibentry{DBLP:journals/ese/TosunDFVTESOTJJ17}
+\item \bibentry{DBLP:journals/ese/DiesteAUTTFOJ17}
+\item \bibentry{DBLP:journals/infsof/RomanoFSTJ17}
+\item \bibentry{DBLP:journals/tse/FucciETOJ17}
+\item \bibentry{DBLP:journals/infsof/FucciTJDMO15}
+\item \bibentry{DBLP:journals/ese/FucciT14}
+\end{etaremune}
 
-% \noindent\href{http://infoscience.epfl.ch/record/191239}{\bf Function-Passing Style: Typed, Distributed}\dates{}\vspace{-0.03in}
-% \newline\noindent\href{http://infoscience.epfl.ch/record/191239}{\bf Functional Programming}
-\noindent{\bf A Programming Model and Foundation for Lineage-Based Distributed}\dates{JFP 2018}
-\noindent{\bf Computation}\dates{(to appear)}
-\newline\noindent Heather Miller, Philipp Haller, Normen M\"{u}ller
-\newline\noindent\emph{Journal of Functional Programming}
-\newline\noindent\emph{Special Issue: Programming Languages for Big Data}
 \bigskip
-
-
-\pagebreak
-
 %% Publications: Conferences
-\marginhead{Publications: \newline Conferences}
-
-\noindent\href{https://infoscience.epfl.ch/record/229878}{\bf Simplicitly: Foundations and Applications of Implicit Function Types}\dates{POPL 2018}
-\newline\noindent Martin Odersky, Olivier Blanvillain, Fengyun Liu, Aggelos Biboudis
-\newline\noindent Heather Miller, Sandro Stucki
-\newline\noindent\emph{ACM SIGPLAN Symposium on Principles of Programming Languages}
+\marginhead{Publications \newline \textit{Conferences}}
+\begin{etaremune}
+\item \bibentry{Fucci2018ESEMa}
+\item \bibentry{Fucci2018ESEMb}
+\item \bibentry{Fucci2018ESEMc}
+\item \bibentry{Fucci2018ICSME}
+\item \bibentry{DBLP:conf/ispw/DiesteAUTTFOJ18}
+\item \bibentry{DBLP:conf/refsq/PalomaresFF18}
+\item \bibentry{DBLP:conf/icse/0001SFJT18}
+\item \bibentry{DBLP:conf/esem/FucciS0SSUTJO16}
+\item \bibentry{DBLP:conf/sac/Scanniello0FTJ16}
+\item \bibentry{DBLP:conf/ease/FucciTO15}
+\item \bibentry{DBLP:conf/ease/FucciTO14}
+\item \bibentry{DBLP:conf/esem/FucciTO14}
+\item \bibentry{DBLP:conf/icse/Fucci14}
+\item \bibentry{DBLP:conf/esem/FucciT13}
+\item \bibentry{DBLP:conf/isami/SuFR10}
+\end{etaremune}
 \bigskip
 
-\noindent\href{https://infoscience.epfl.ch/record/205822}{\bf Function Passing: A Model for Typed, Distributed Functional}\dates{SPLASH 2016}\vspace{-0.03in}
-\newline\noindent\href{https://infoscience.epfl.ch/record/205822}{\bf Programming}
-\newline\noindent Heather Miller, Philipp Haller, Normen M\"{u}ller, Joceyln Boullier
-\newline\noindent\emph{ACM SIGPLAN International Symposium on New Ideas, New Paradigms,}
-\newline\noindent\emph{and Reflections on Programming \& Software}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/191239}{\bf Spores: A Type-Based Foundation for Closures in the Age of}\dates{ECOOP 2014}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/191239}{\bf Concurrency and Distribution}
-% \smallskip
-\newline\noindent Heather Miller, Philipp Haller, Martin Odersky
-\newline\noindent\emph{European Conference on Object Oriented Programming}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/190022}{\bf Functional Programming For All! Scaling a MOOC for Students}\dates{ICSE 2014}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/190022}{\bf And Professionals Alike}
-% \smallskip
-\newline\noindent Heather Miller, Philipp Haller, Lukas Rytz, Martin Odersky
-\newline\noindent\emph{ACM SIGSOFT International Conference on Software Engineering}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/188383}{\bf Instant Pickles: Generating Object-Oriented Pickler}\dates{OOPSLA 2013}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/188383}{\bf Combinators for Fast and Extensible Serialization}
-% \smallskip
-\newline\noindent Heather Miller, Philipp Haller, Eugene Burmako, Martin Odersky
-\newline\noindent\emph{ACM SIGPLAN Conference on Object Oriented Programming, Systems,}
-\newline\noindent\emph{Languages and Applications}
-\bigskip
-
-%% Publications: Workshops
-\marginhead{Publications: \newline Workshops}
-
-\noindent\href{https://infoscience.epfl.ch/record/205039}{\bf Distributed Programming via Safe Closure Passing}\dates{PLACES 2015}
-\newline\noindent Philipp Haller, Heather Miller
-\newline\noindent\emph{Programming Language Approaches to Communication}
-\newline\noindent\emph{and Concurrency Centric Systems}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/188383}{\bf RAY: Integrating Rx and Async for Direct-Style Reactive Streams}\dates{REM 2013}
-% \smallskip
-\newline\noindent Philipp Haller, Heather Miller
-\newline\noindent\emph{ACM SPLASH Workshop on Reactivity, Events and Modularity}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/180265}{\bf FlowPools: A Lock-Free Deterministic Concurrent}\dates{LCPC 2012}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/180265}{\bf Dataflow Abstraction}
-% \smallskip
-\newline\noindent Aleksandar Prokopec, Heather Miller, Tobias Schlatter,
-\newline\noindent Philipp Haller, Martin Odersky
-\newline\noindent\emph{International Workshop on Languages and Compilers for Parallel Computing}
-\vspace{0.03in}
-\newline\noindent {\small Invited to Revised Selected Papers on the 25th International Workshop on}
-\vspace{-0.03in}
-\newline\noindent {\small Languages and Compilers for Parallel Computing, Lecture Notes in Computer}
-\vspace{-0.03in}
-\newline\noindent {\small Science, Vol. 7760, 2013}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/170032}{\bf Tools and Frameworks for Big Learning in Scala: Leveraging the}\dates{BigLearn 2011}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/170032}{\bf Language for High Productivity and Performance}
-% \smallskip
-\newline\noindent Heather Miller, Philipp Haller, Martin Odersky
-\newline\noindent\emph{NIPS Workshop on Parallel and Large-Scale Machine Learning}
-\bigskip
-
-\noindent\href{http://infoscience.epfl.ch/record/165111}{\bf Parallelizing Machine Learning -- Functionally: A Framework}\dates{Scala 2011}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/165111}{\bf and Abstractions for Parallel Graph Processing}
-% \smallskip
-\newline\noindent Philipp Haller, Heather Miller
-\newline\noindent\emph{Scala Workshop}
-\bigskip
-
-%% Use revnumerate environment if numbered publications are needed.
-%% (Include it above in the preamble).
-%% \renewcommand{\labelenumi}{\textsc{a}\theenumi.}
-%% \begin{revnumerate}
-
-\noindent\href{https://infoscience.epfl.ch/record/221395}{\bf The Function Passing Model: Types, Proofs, and Semantics}\dates{May 2016}
-\newline\noindent Philipp Haller, Normen M\"{u}ller, Heather Miller
-\medskip
-
-\noindent{\bf Specialising Parsers for Queries}\dates{April 2016}
-\newline\noindent Manohar Jonnalagedda, Jorge Vicente Cantero, Heather Miller, Martin Odersky
-\medskip
-
-\noindent\href{https://infoscience.epfl.ch/record/197948}{\bf Improving Human-Compiler Interaction Through Customizable} \dates{December 2014}\vspace{-0.03in}
-\newline\noindent\href{https://infoscience.epfl.ch/record/197948}{\bf Type Feedback}\dates{}
-\newline\noindent Hubert Plociniczak, Heather Miller, Martin Odersky
-\medskip
-
-\noindent\href{https://infoscience.epfl.ch/record/199389}{\bf Self-Assembly: Lightweight Language Extension and Datatype}\dates{August 2014}\vspace{-0.03in}
-\newline\noindent\href{https://infoscience.epfl.ch/record/199389}{\bf Generic Programming, All-in-One!}\dates{}
-\newline\noindent Heather Miller, Philipp Haller, Bruno C. d. S. Oliveira
-\medskip
-
-\noindent\href{http://infoscience.epfl.ch/record/191240}{\bf Spores, Formally}\dates{December 2013}
-% \smallskip
-\newline\noindent Heather Miller, Philipp Haller
-% \bigskip
-\medskip
-
-\noindent\href{http://infoscience.epfl.ch/record/181098}{\bf  FlowPools: A Lock-Free Deterministic Concurrent Dataflow}\dates{June 2012}\vspace{-0.03in}
-\newline\noindent\href{http://infoscience.epfl.ch/record/181098}{\bf  Abstraction -- Proofs}\dates{}
-% \smallskip
-\newline\noindent Aleksandar Prokopec, Heather Miller, Philipp Haller
-
+\marginhead{Publications \newline \textit{Workshops}}
+\begin{etaremune}
+\item \bibentry{GLN18}
+\item \bibentry{PFM18}
+\item \bibentry{DBLP:conf/refsq/FucciSMKJM18}
+\item \bibentry{DBLP:conf/sigsoft/EllmannOFM17}
+\item \bibentry{DBLP:conf/icse/TorrePFLS17}
+\end{etaremune}
 
 %% External Service
 \bigskip
@@ -458,234 +359,111 @@
 
 % \noindent {\bf Committees:}
 
-\noindent {\bf General Chair and/or Program Chair:}
+\noindent {\bf Organizer:}
 %\smallskip
-\newline\noindent {\em Curry On} {(\textbf{Curry On})} \dates{2015, 2016, 2017, 2018}
-\newline\noindent {\em Trends in Functional Programming in Education} {(\textbf{TFPIE})} \dates{2018}
-\newline\noindent {\em Scala Symposium} {(\textbf{Scala})}  \dates{2013, 2014, 2017}
-\newline\noindent {\em Programming Models \& Languages for Distributed Computation} {(\textbf{PMLDC})}  \dates{2016, 2017}
+\newline\noindent {\em 1st Intl\@. Workshop on Affective Computing for Requrements Engineering} {(\textbf{AffectRE})} \dates{2018}
 \bigskip
 
 \noindent {\bf Organizing Committee Member:}
 %\smallskip
-\newline {\em Object-Oriented Programming, Systems, Languages \& Applications} {(\textbf{OOPSLA})} \dates{2018}
-\newline {\em European Conference on Object-Oriented Programming} {(\textbf{ECOOP})} \dates{2015 -- 2018}
+\newline {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2018}
 \bigskip
 
 \noindent {\bf Program Committee Member:}
 %\smallskip
-\newline\noindent {\em International Conference on Functional Programming} {(\textbf{ICFP})} \dates{2018}
-\newline\noindent {\em Object-Oriented Programming, Systems, Languages \& Applications} {(\textbf{OOPSLA})} \dates{2017}
-\newline\noindent {\em Off the Beaten Track} {(\textbf{OBT})} \dates{2018}
-\newline\noindent {\em Scala Symposium} {(\textbf{Scala})} \dates{2016}
-\newline\noindent {\em Symposium on Trends in Functional Programming} {(\textbf{TFP})} \dates{2016}
-\newline\noindent {\em Software Language Engineering} {(\textbf{SLE})} \dates{2016}
-\newline\noindent {\em Symposium on Applied Computing} {(\textbf{SAC})} \dates{2016}
-\newline\noindent {\em Programming Language Evolution} {(\textbf{PLE})} \dates{2015}
-\newline\noindent {\em Domain-Specific Language Design and Implementation} {(\textbf{DSLDI})} \dates{2015}
+\newline\noindent {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2015--2018}
+\newline\noindent {\em Intl\@. Conference on Evaluation and Assessment in Software Engineering} {(\textbf{EASE})} \dates{2018}
+\newline\noindent {\em Intl\@. Conference on Software and System Processes} {(\textbf{ICSSP})} \dates{2016--2019}
+\newline\noindent {\em Intl\@. Conference on on Product-Focused Software Process Improvement} {(\textbf{PROFES})} \dates{2018}
+\newline\noindent {\em Software Engineering and Advanced Applications} {(\textbf{SEAA})} \dates{2018}
+\newline\noindent {\em Intl\@. Conference on Extreme Programming} {(\textbf{XP})} \dates{2014}
 \medskip
 
-\noindent {\bf External Review Committee Member:}
-\newline\noindent {PLDI 2018}, {ECOOP 2016}, {ECOOP 2013}, {Scala 2013}
-\medskip
-\newline\noindent {\bf Artifact Evaluation Committee:} {POPL 2015}
-\medskip
+\noindent {\bf Reviewer:}
+\newline\noindent {\em IEEE Transactions on Software Engineering} {(\textbf{TSE})}
+\newline\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})}
+\newline\noindent {\em Information and Software Technology Journal} {(\textbf{IST})}
+\newline\noindent {\em Journal of Software and Systems} {(\textbf{JSS})}
 
 %% Diversity and Outreach
 \bigskip
 \marginhead{Diversity \&\newline Outreach}
 
-\noindent {\bf Girls Code It: Intensive Pre-College Computer Science Program} \dates{Summer 2018}
-\newline\noindent Conceived of and am organizing large pre-college program aimed at \dates{Northeastern}
-\newline\noindent preparing high school-aged girls for a career in Computer Science. 
-\smallskip
-\newline\noindent 6 week-long residential program for 100 students which awards  
-\newline\noindent college credit and puts alumni of the program on an accelerated 
-\newline\noindent CS track upon matriculating at Northeastern University.
+\noindent {\bf Rails Girls} \dates{2014, 2016}
+\newline\noindent Tutoring women in their first approach to software development\bigskip
 \bigskip
 
-\noindent {\bf ScalaBridge Organizer}
-\newline\noindent Organizer of free full-day workshops on the weekends aimed at teaching women
-\newline\noindent and underrepresented minorities in computing how to think computationally and
-\newline\noindent how to program in Scala. 
-\smallskip 
-\newline\noindent {\em ScalaBridge Chapters: Basel (CH), Z\"{u}rich (CH), Copenhagen (DK), Boston (US).}
-\bigskip
-
-%% Honors
-\medskip
+\newpage
 \marginhead{Honors}
-
-\noindent US National Science Foundation Graduate Research Fellowship \dates{2011 -- 2014}
-% \newline\noindent PLMW Travel Grant \dates{2014-2015}
-% \newline\noindent ICSE Travel Grant \dates{2014}
-\newline\noindent EPFL Outstanding Teaching Award \dates{2012}
-\newline\noindent EPFL Computer Science Fellowship \dates{2009 -- 2010}
-\newline\noindent Most Outstanding Audio Engineering Student, University of Miami \dates{2009}
-\newline\noindent Most Outstanding Eta Kappa Nu Student, University of Miami \dates{2009}
-\newline\noindent Information Technology Scholarship, University of Miami \dates{2006 -- 2009}
-\newline\noindent John Farina Family Scholarship, University of Miami \dates{2006 -- 2009}
-\newline\noindent Eta Kappa Nu \dates{2008}
-\newline\noindent Tau Beta Pi \dates{2008}
-\newline\noindent SMART US Department of Defense Scholarship Alternate \dates{2007}
-\newline\noindent Cooper Union Full Tuition Scholarship \dates{2004 -- 2006}
-
+\noindent Best Paper Award, ESEM2016 \dates{2016}
+\newline\noindent Most Commended Paper Award, EASE2016 \dates{2016}
+\newline\noindent Nokia Foundation Award for Junior Researcher \dates{2014}
 \bigskip
 
-\pagebreak
 
 %% Talks
 \medskip
 \marginhead{Selected Talks}
 
 \vspace{-0.02in}
-\noindent{\bf What Happened to Distributed Programming} \dates{Strange Loop \& PWLConf 2017}\vspace{-0.03in}
-\newline\noindent {\bf  Languages?}\dates{{\bf \em (invited)}}
-\linebreak\noindent St. Louis, MO, USA. September 29, 2017
-\bigskip
+\noindent{\bf TDD: Carefully Read the Information Leaflet Before Using} \dates{July 2014}
+\newline\noindent{\em Bari Startup Hub} 
 
-\noindent{\bf The Dramatic Consequences of the Open Source Revolution:}\dates{Devoxx 2017}\vspace{-0.03in}
-\newline\noindent {\bf Unrecognized Challenges \& Some Modest Attempts at}\dates{{\bf \em (invited)}}\vspace{-0.03in}
-\newline\noindent {\bf Solutions in Scala}\dates{}
-\linebreak\noindent Paris, France. April 7, 2017
-\bigskip
-
-\noindent{\bf The Dramatic Consequences of the Open Source Revolution}\dates{Scala Exchange 2016}\vspace{-0.03in}
-\newline\noindent {\bf \& How the Scala Center Hopes to Help}\dates{{\bf \em (keynote)}}
-\linebreak\noindent London, UK. December 9, 2016
-\bigskip
-
-
-\noindent{\bf Function Passing: A Model for Typed, Distributed Functional}\dates{SPLASH 2016}\vspace{-0.03in}
-\newline\noindent {\bf Programming}\dates{}
-\linebreak\noindent Amsterdam, The Netherlands. November 2, 2016
-\bigskip
-
-\noindent{\bf Introducing the Scala Center}\dates{Scala Days 2016}
-\linebreak\noindent New York, NY, US. May 10, 2016 \& Berlin, Germany. June 16, 2016 \dates{{\bf \em (keynote)}}
-\newline\noindent {\em (total \textasciitilde1700 attendees)}
-\bigskip
-
-
-\noindent\href{https://speakerdeck.com/heathermiller/function-passing-style-typed-distributed-functional-programming}{\bf Function Passing Style: Typed, Distributed} \dates{Strange Loop 2014}\vspace{-0.03in}
-\linebreak\noindent\href{https://speakerdeck.com/heathermiller/function-passing-style-typed-distributed-functional-programming}{\bf Functional Programming}\dates{}
-\linebreak\noindent St. Louis, MO, USA. September 19, 2014
-\bigskip
-
-
-\noindent\href{https://speakerdeck.com/heathermiller/spores-a-type-based-foundation-for-closures-in-the-age-of-concurrency-and-distribution}{\bf Spores: A Type-Based Foundation for Closures in the Age of} \dates{ECOOP 2014}\vspace{-0.03in}
-\linebreak\noindent\href{https://speakerdeck.com/heathermiller/spores-a-type-based-foundation-for-closures-in-the-age-of-concurrency-and-distribution}{\bf Concurrency and Distribution}\dates{}
-\linebreak\noindent Uppsala, Sweden. August 1, 2014
-\bigskip
-
-\noindent{\bf Functional Programming For All! Scaling a MOOC for} \dates{ICSE 2014}\vspace{-0.03in}
-\linebreak\noindent{\bf Students and Professionals Alike}\dates{}
-\linebreak\noindent Hyderabad, India. June 4, 2014
-\bigskip
-
-\noindent{\bf Academese to English: Scala's Type System, Dependent Types} \dates{NEScala 2014}\vspace{-0.03in}
-\linebreak\noindent{\bf and What It Means To You}\dates{}
-\linebreak\noindent New York, NY, USA. March 1, 2014
-\bigskip
-
-\noindent\href{https://speakerdeck.com/heathermiller/instant-pickles-generating-object-oriented-pickler-combinators-for-fast-and-extensible-serialization}{\bf Instant Pickles: Generating Object-Oriented Pickler} \dates{OOPSLA 2013}\vspace{-0.03in}
-\linebreak\noindent\href{https://speakerdeck.com/heathermiller/instant-pickles-generating-object-oriented-pickler-combinators-for-fast-and-extensible-serialization}{\bf Combinators for Fast and Extensible Serialization}\dates{}
-\linebreak\noindent Indianapolis, IN, USA. October 30, 2013
-\bigskip
-
-\noindent\href{http://heather.miller.am/files/IU-PL-Abstractions-for-Dist-Programming.pdf}{\bf PL Abstractions for Distributed Programming:} \dates{Indiana University {\bf \em (invited)}}\vspace{-0.03in}
-\linebreak\noindent\href{http://heather.miller.am/files/IU-PL-Abstractions-for-Dist-Programming.pdf}{\bf Pickle Your Spores!}\dates{}
-\linebreak\noindent Bloomington, IN, USA. October 25, 2013
-\bigskip
-
-\noindent\href{https://speakerdeck.com/heathermiller/spores-distributable-functions-in-scala}{\bf Spores: Distributable Functions in Scala} \dates{Strange Loop 2013}
-\linebreak\noindent St. Louis, MO, USA. September 19, 2013
-\bigskip
-
-\noindent\href{http://heather.miller.am/files/LaME2013-Dataflow.pdf}{\bf Open Issues in Dataflow Programming} \dates{LaME 2013 {\bf \em (invited)}}
-\linebreak\noindent Montpellier, France. July 1, 2013
-\bigskip
-
-\noindent{\bf Scala as a Research Tool} \dates{ECOOP 2013 Tutorial}
-\linebreak\noindent Montpellier, France. July 1, 2013
-\bigskip
-
-\noindent\href{https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala}{\bf On Pickles \& Spores: Improving Scala's Support} \dates{ScalaDays 2013}\vspace{-0.03in}
-\linebreak\noindent\href{https://speakerdeck.com/heathermiller/on-pickles-and-spores-improving-support-for-distributed-programming-in-scala}{\bf for Distributed Programming}\dates{}
-\linebreak\noindent New York, NY, USA. June 12, 2013
-\bigskip
-
-\noindent\href{http://lampwww.epfl.ch/~hmiller/files/Futures-Try-PhillyETE.pdf}{\bf Futures \& Promises in Scala 2.10} \dates{PhillyETE 2013 {\bf \em (invited)}}
-\linebreak\noindent Philadelphia, PA, USA. April 2, 2013
-\bigskip
-
+\medskip
+\noindent {\bf What do We Know About TDD and Agile Testing?}\dates{November 2016}
+\newline\noindent{\em University of Bari} 
 
 %% Students Supervised
-\medskip
+\bigskip
 \marginhead{Students \newline Supervised}
 
-\noindent {\bf Kevin Clancy}, {\em Eventual Consistency via Types} \dates{2016 --}
-\newline\noindent PhD thesis \dates{Northeastern}
+\noindent {\bf Alireza Mollaalizadehbahnemiri}\dates{10/2017--02/2018}
+\newline\noindent{\em Knowledge Extraction from API Reference Documentation Using Deep Learning} 
+\newline\noindent M.Sc. thesis, \textit{University of Hamburg}
 \medskip
 
-\noindent {\bf Joceyln Boullier}, {\em Evaluating the Efficiacy of the Function Passing Model} \dates{2/2016 -- 8/2016}
-\newline\noindent M.Sc. thesis \dates{EPFL}
+\noindent {\bf Alexander Oeser} \dates{8/2017--1/2018}
+\newline\noindent{\em Finding, Understanding, and Enriching Developers Screencast on YouTube} 
+\newline\noindent M.Sc. thesis, \textit{University of Hamburg}
 \medskip
 
-\noindent {\bf Jorge Vicente Cantero}, {\em Implementing the Function Passing Model} \dates{2/2016 -- 6/2016}
-\newline\noindent B.Sc. thesis \dates{EPFL}
+\noindent {\bf Teemu Moisainen} \dates{10/2016--4/2017}
+\newline\noindent{\em A DataViz tool for Test-Driven Development} 
+\newline\noindent M.Sc. thesis, \textit{University of Oulu}
 \medskip
-
-\noindent {\bf Thadd\'{e}e Yann Tyl}, {\em Learning Scala Style} \dates{2/2013 -- 6/2013}
-\newline\noindent M.Sc. thesis \dates{EPFL}
 \medskip
 
 \bigskip
 \marginhead{References}
-
-
-\noindent\begin{tabular}{lr}
-
-\begin{minipage}[t]{2.5in}
-\noindent {\bf Martin Odersky}, Professor
-\newline\noindent {\em \'{E}cole Polytechnique F\'{e}d\'{e}rale de Lausanne}
-\newline\noindent \Telefon~+41 21 693 68 63
-\newline\noindent \Letter~\href{mailto:martin.odersky@epfl.ch}{martin.odersky@epfl.ch}
-\medskip	
+\thispagestyle{fancy}
+\noindent\begin{minipage}[t]{2.5in}
+\noindent {\bf Markku Oivo}, Full Professor
+\newline\noindent {\em University of Oulu}
+\newline\noindent \faPhone~+358 40 822 7702
+\newline\noindent \faEnvelope~markku.oivo@oulu.fi
 \end{minipage}
-&
+\hfill
 \begin{minipage}[t]{2.5in}
-\noindent {\bf Matthias Felleisen}, Trustee Professor
-\newline\noindent {\em Northeastern University}
-\newline\noindent \Telefon~+1-617-373-2085
-\newline\noindent \Letter~\href{mailto:matthias@ccs.neu.edu}{matthias@ccs.neu.edu}
-\medskip	
-\end{minipage}
-\\
-\\
-\begin{minipage}[t]{2.5in}
-\noindent {\bf Jan Vitek}, Professor
-\newline\noindent {\em Northeastern University}
-\newline\noindent \Telefon~+1-617-749-8148
-\newline\noindent \Letter~\href{mailto:j.vitek@northeastern.edu}{j.vitek@northeastern.edu}
-\medskip	
-\end{minipage}
-&
-\begin{minipage}[t]{2.5in}
-\noindent {\bf Matei Zaharia}, Assistant Professor
-\newline\noindent {\em Stanford University}
-\newline\noindent \Telefon~+1-510-610-0001
-\newline\noindent \Letter~\href{mailto:matei@cs.stanford.edu}{matei@cs.stanford.edu}
-\medskip	
-\end{minipage}
-\\
-\\
-\begin{minipage}[t]{2.5in}
-\noindent {\bf Philipp Haller}, Assistant Professor
-\newline\noindent {\em KTH Royal Institute of Technology}
-\newline\noindent \Telefon~+46 70 738 28 43
-\newline\noindent \Letter~\href{mailto:phaller@kth.se}{phaller@kth.se}	
+\noindent {\bf Natalia Juristo}, Full Professor
+\newline\noindent {\em Universidad Politecnica de Madrid}
+\newline\noindent \faPhone~+34 91 336 6922
+\newline\noindent \faEnvelope~natalia@fi.upm.es
 \end{minipage}
 
-\end{tabular}
+\bigskip
+\medskip
+
+\noindent\begin{minipage}[t]{2.5in}
+  \noindent {\bf Burak Turhan}, Associate Professor
+  \newline\noindent {\em Monash University}
+  \newline\noindent \faPhone~+61 3 9905 6986
+  \newline\noindent \faEnvelope~burak.turhan@monash.edu	
+  \end{minipage}
+\hfill
+\noindent\begin{minipage}[t]{2.5in}
+  \noindent {\bf Walid Maalej}, Full Professor
+  \newline\noindent {\em University of Hamburg}
+  \newline\noindent \faPhone~+49 040 428 83-2073
+  \newline\noindent \faEnvelope~maalej@informatik.uni-hamburg.de	
+  \end{minipage}
 \end{document}
