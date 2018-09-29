@@ -73,12 +73,13 @@
 \usepackage[ampersand]{easylist}
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
-\usepackage{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
+\usepackage[leftmargin=0.23in]{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
 \usepackage{xstring}
 \usepackage{academicons}
 %% needed for xelatex to work
 \usepackage{fontspec}
 \usepackage{xunicode}
+\usepackage{enumitem}
 
 %% color for the links
 % \usepackage[usenames,dvipsnames]{color}
@@ -165,9 +166,8 @@
 \textheight=580pt
 \raggedbottom
 \thispagestyle{fancy}
-
 %% git revision control footer
-% \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
+% \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package: for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 
 %%%------------------------------------------------------------------------
@@ -317,8 +317,7 @@
 \bigskip
 %% Publications: Journals
 \marginhead{Publications \newline \textit{Journals}}
-
-\hspace{-0.2in}\begin{etaremune}
+\begin{etaremune}
 \item \bibentry{fucci2018need}
 \item \bibentry{DBLP:journals/ese/TosunDFVTESOTJJ17}
 \item \bibentry{DBLP:journals/ese/DiesteAUTTFOJ17}
@@ -327,7 +326,6 @@
 \item \bibentry{DBLP:journals/infsof/FucciTJDMO15}
 \item \bibentry{DBLP:journals/ese/FucciT14}
 \end{etaremune}
-
 \bigskip
 %% Publications: Conferences
 \marginhead{Publications \newline \textit{Conferences}}
@@ -349,7 +347,6 @@
 \item \bibentry{DBLP:conf/isami/SuFR10}
 \end{etaremune}
 \bigskip
-
 \marginhead{Publications \newline \textit{Workshops}}
 \begin{etaremune}
 \item \bibentry{GLN18}
@@ -390,6 +387,7 @@
 \newline\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})}
 \newline\noindent {\em Information and Software Technology Journal} {(\textbf{IST})}
 \newline\noindent {\em Journal of Software and Systems} {(\textbf{JSS})}
+\newline\noindent {\em IEEE Software Magazine} {(\textbf{IEEESW})}
 
 %% Diversity and Outreach
 \bigskip
@@ -441,7 +439,6 @@
 
 \bigskip
 \marginhead{References}
-\thispagestyle{fancy}
 \noindent\begin{minipage}[t]{2.5in}
 \noindent {\bf Markku Oivo}, Full Professor
 \newline\noindent {\em University of Oulu}
