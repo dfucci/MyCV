@@ -48,10 +48,12 @@
 \def\myaffiliation{University of Hamburg}
 \def\myaddress{Fachbereich Informatik}
 \def\myemail{fucci@informatik.uni-hamburg.de}
-\def\myweb{http://dfucci.ink}
-\def\mygithub{https://github.com/dfucci}
-\def\mytwitter{https://twitter.com/dfucci\_}
+\def\myweb{dfucci.ink}
+\def\mygithub{github.com/dfucci}
+\def\mytwitter{twitter.com/dfucci\_}
 \def\myphone{+49 163 400 6714}
+\def\mypublons{publons.com/a/930114/}
+\def\myorcid{orcid.org/0000-0002-0679-4361}
 
 
 %%%------------------------------------------------------------------------
@@ -73,7 +75,7 @@
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
 \usepackage{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
 \usepackage{xstring}
-
+\usepackage{academicons}
 %% needed for xelatex to work
 \usepackage{fontspec}
 \usepackage{xunicode}
@@ -82,6 +84,8 @@
 % \usepackage[usenames,dvipsnames]{color}
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{DarkBlue}{HTML}{265B8C}
+% for ORCID logo
+\definecolor{orcidlogocol}{HTML}{A6CE39}
 
 
 %% hyperlinks
@@ -185,6 +189,8 @@
 \begin{minipage}[t]{1.7in}
   {\footnotesize \faPhone~\myphone \\ 
   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
+  \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
+  \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
    \noindent \faSitemap~\texttt{dfucci.ink} \vspace{-0.03in}\\
   \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
  \noindent  \faTwitter~\texttt{dfucci\_}
@@ -312,7 +318,7 @@
 %% Publications: Journals
 \marginhead{Publications \newline \textit{Journals}}
 
-\begin{etaremune}
+\hspace{-0.2in}\begin{etaremune}
 \item \bibentry{fucci2018need}
 \item \bibentry{DBLP:journals/ese/TosunDFVTESOTJJ17}
 \item \bibentry{DBLP:journals/ese/DiesteAUTTFOJ17}
