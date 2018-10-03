@@ -1,3 +1,5 @@
+#VSCODE
+.vscode/
 .DS_Store
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -239,8 +241,3 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
->>>>>>> 9283653d7d817fcb2b6db06d390fabdb8b24933b
-.vscode/settings.json
-cv.pdf
-cv.pdf
-cv.pdf
