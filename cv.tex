@@ -69,7 +69,6 @@
 %%% Required style files
 %%%------------------------------------------------------------------------
 \usepackage{url,fancyhdr}
-\usepackage{fontawesome}
 \usepackage[ampersand]{easylist}
 \usepackage{bibentry}
 \makeatletter\let\saved@bibitem\@bibitem\makeatother
@@ -78,6 +77,8 @@
 \usepackage{academicons}
 %% needed for xelatex to work
 % \usepackage{fontspec}
+% \defaultfontfeatures{Path = /usr/local/texlive/2019/texmf-dist/fonts/opentype/public/fontawesome/}
+\usepackage{fontawesome}
 \usepackage{xunicode}
 \usepackage{enumitem}
 
@@ -87,7 +88,7 @@
 \definecolor{DarkBlue}{HTML}{265B8C}
 % for ORCID logo
 \definecolor{orcidlogocol}{HTML}{A6CE39}
-
+\newfontfamily{\FAFR}{FontAwesome}
 
 %% hyperlinks
 % \usepackage[xetex,
@@ -124,7 +125,7 @@
 %% and is worth every penny. Any good monospace font will work fine, though.
 %% Consolas or inconsolata are good alternatives.
 \setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro}
-\setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
+\setsansfont[Mapping=tex-text,Colour=AA0000]{Helvetica}
 \setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata}
 
 
@@ -170,38 +171,38 @@
 % \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package: for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 
-%%%------------------------------------------------------------------------
-%%% Address and contact block
-%%%------------------------------------------------------------------------
-% \begin{absolutelynopagebreak}
-\begin{minipage}[t]{2.95in}
-{\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
-\noindent Department of Software Engineering \vspace{-0.04in}\\
-\noindent Blekinge Institute of Technology \vspace{-0.01in}\\
-\noindent Valhallavägen 1 \vspace{-0.04in}\\
-\noindent Kalrskrona, 37141 \vspace{-0.04in}\\
-\noindent Swedeny
-}
-\end{minipage}
-%\begin{minipage}[t]{0.0in}
-% dummy (needed here)
-%\end{minipage}
-\begin{minipage}[t]{1.7in}
-  {\footnotesize \faPhone~\myphone \\
-  \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
-  \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
-  \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
-   \noindent \faSitemap~\texttt{dfucci.co} \vspace{-0.03in}\\
-  \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
- \noindent  \faTwitter~\texttt{dfucci\_}
- }
-\end{minipage}
-
-
-\bigskip
-\bigskip
-\bigskip
-
+% %%%------------------------------------------------------------------------
+% %%% Address and contact block
+% %%%------------------------------------------------------------------------
+% % \begin{absolutelynopagebreak}
+% \begin{minipage}[t]{2.95in}
+% {\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
+% \noindent Department of Software Engineering \vspace{-0.04in}\\
+% \noindent Blekinge Institute of Technology \vspace{-0.01in}\\
+% \noindent Valhallavägen 1 \vspace{-0.04in}\\
+% \noindent Kalrskrona, 37141 \vspace{-0.04in}\\
+% \noindent Swedeny
+% }
+% \end{minipage}
+% %\begin{minipage}[t]{0.0in}
+% % dummy (needed here)
+% %\end{minipage}
+% \begin{minipage}[t]{1.7in}
+%   {\footnotesize \faPhone~\myphone \\
+%   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
+%   \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
+%   \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
+%    \noindent \faSitemap~\texttt{dfucci.co} \vspace{-0.03in}\\
+%   \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
+%  \noindent  \faTwitter~\texttt{dfucci\_}
+%  }
+% \end{minipage}
+%
+%
+% \bigskip
+% \bigskip
+% \bigskip
+%
 %% Name
 \noindent{\huge {\textsc{Davide Fucci}}}
 \reversemarginpar
@@ -335,6 +336,9 @@
 %% Publications: Conferences
 \marginhead{Publications \newline \textit{Conferences}}
 \begin{etaremune}
+\item \bibentry{FucciGNL20}
+\item \bibentry{FucciRBS19}
+\item \bibentry{FucciL19}
 \item \bibentry{FucciMM19}
 \item \bibentry{FucciGNQL19}
 \item \bibentry{Fucci2018ESEMa}
@@ -372,7 +376,10 @@
 
 \noindent {\bf Organizer:}
 %\smallskip
+\newline\noindent {\em 5th Intl\@. Workshop on Emotion Awareness in Software Engineering} {(\textbf{SEmotion})} \dates{2020}
+\smallskip
 \newline\noindent {\em 2nd Intl\@. Workshop on Affective Computing for Requirements Engineering} {(\textbf{AffectRE})} \dates{2019}
+\smallskip
 \newline\noindent {\em 4th Intl\@. Workshop on Emotion Awareness in Software Engineering} {(\textbf{SEmotion})} \dates{2019}
 \smallskip
 \newline\noindent {\em 1st Intl\@. Workshop on Affective Computing for Requirements Engineering} {(\textbf{AffectRE})} \dates{2018}
@@ -389,16 +396,17 @@
 \noindent {\bf Program Committee Member:}
 %\smallskip
 \newline\noindent {\em Intl\@. Working Conf. on RE: Foundation for Software Quality} {(\textbf{REFSQ})} \dates{2020}
-\newline\noindent {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2015--2019}
-\newline\noindent {\em Intl\@. Conference on Evaluation and Assessment in Software Engineering} {(\textbf{EASE})} \dates{2018}
-\newline\noindent {\em Intl\@. Conference on Software and System Processes} {(\textbf{ICSSP})} \dates{2016--2019}
-\newline\noindent {\em Intl\@. Conf. on on Product-Focused Software Process Improvement} {(\textbf{PROFES})} \dates{2018--2019}
+\newline\noindent {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2015--2020}
+\newline\noindent {\em Intl\@. Conference on Evaluation and Assessment in Software Engineering} {(\textbf{EASE})} \dates{2018--2020}
+\newline\noindent {\em Intl\@. Conference on Software and System Processes} {(\textbf{ICSSP})} \dates{2016--2020}
+\newline\noindent {\em Intl\@. Conf. on on Product-Focused Software Process Improvement} {(\textbf{PROFES})} \dates{2018--2020}
 \newline\noindent {\em Software Engineering and Advanced Applications} {(\textbf{SEAA})} \dates{2018}
 \newline\noindent {\em Intl\@. Conference on Extreme Programming} {(\textbf{XP})} \dates{2014}
 \medskip
 
 \noindent {\bf Reviewer:}
 \newline\noindent {\em IEEE Transactions on Software Engineering} {(\textbf{TSE})}
+\newline\noindent {\em Requirements Engineering Journal} {(\textbf{REEN})}
 \newline\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})}
 \newline\noindent {\em Information and Software Technology Journal} {(\textbf{IST})}
 \newline\noindent {\em Journal of Software and Systems} {(\textbf{JSS})}
