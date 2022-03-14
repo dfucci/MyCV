@@ -1,4 +1,4 @@
-%%% A template to produce a nice-looking Curriculum Vitae.
+%%% A template to produce a nice-looking Curriculum Vitae.\\
 %%% Original by Kieran Healy <kjhealy@gmail.com>, tweaked by Heather Miller <heather.c.miller@gmail.com> (http://github.com/heathermiller/cv) and futher tweaked by Davide Fucci <davfuc@gmail.com>
 %%% Most recent version is at http://github.com/dfucci/cv)
 %%%
@@ -76,9 +76,9 @@
 \usepackage{xstring}
 \usepackage{academicons}
 %% needed for xelatex to work
-% \usepackage{fontspec}
-% \defaultfontfeatures{Path = /usr/local/texlive/2019/texmf-dist/fonts/opentype/public/fontawesome/}
-\usepackage{fontawesome}
+\usepackage{fontspec}
+% \defaultfontfeatures{Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5}
+\usepackage{fontawesome5}
 \usepackage{xunicode}
 \usepackage{enumitem}
 
@@ -88,7 +88,7 @@
 \definecolor{DarkBlue}{HTML}{265B8C}
 % for ORCID logo
 \definecolor{orcidlogocol}{HTML}{A6CE39}
-\newfontfamily{\FAFR}{FontAwesome}
+% \newfontfamily{\FA}[Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5]{FontAwesome}
 
 %% hyperlinks
 % \usepackage[xetex,
@@ -138,7 +138,7 @@
 %% \vspace element to keep the marginal header pleasingly aligned with the first
 %% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
 %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
-\newcommand{\marginhead}[1]{\marginpar{\textsf{{\normalsize\vspace{-1em}\flushright #1}}}}
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\normalsize\vspace{-1em}\flushright{\textcolor{RubineRed}#1}}}}}
 
 \newcommand{\dates}[1]{\hfill \emph{#1}}
 
@@ -174,38 +174,37 @@
 % %%%------------------------------------------------------------------------
 % %%% Address and contact block
 % %%%------------------------------------------------------------------------
-% % \begin{absolutelynopagebreak}
-% \begin{minipage}[t]{2.95in}
-% {\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
-% \noindent Department of Software Engineering \vspace{-0.04in}\\
-% \noindent Blekinge Institute of Technology \vspace{-0.01in}\\
-% \noindent Valhallavägen 1 \vspace{-0.04in}\\
-% \noindent Kalrskrona, 37141 \vspace{-0.04in}\\
-% \noindent Sweden
-% }
-% \end{minipage}
-% %\begin{minipage}[t]{0.0in}
-% % dummy (needed here)
-% %\end{minipage}
-% \begin{minipage}[t]{1.7in}
-%   {\footnotesize \faPhone~\myphone \\
-%   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
-%   \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
-%   \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
-%    \noindent \faSitemap~\texttt{dfucci.co} \vspace{-0.03in}\\
-%   \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
-%  \noindent  \faTwitter~\texttt{dfucci\_}
-%  }
-% \end{minipage}
-%
-%
-% \bigskip
-% \bigskip
-% \bigskip
+ % \begin{absolutelynopagebreak}
+\reversemarginpar
+   \centering\textsc{Address and contacts}\\
+ \begin{minipage}[t]{2in}
+ {\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
+ \noindent Department of Software Engineering \vspace{-0.04in}\\
+ \noindent Blekinge Institute of Technology \vspace{-0.01in}\\
+ \noindent Valhallavägen 1 \vspace{-0.04in}\\
+ \noindent Kalrskrona, 37141 \vspace{-0.04in}\\
+ \noindent Sweden
+ }
+ \end{minipage}
+ \begin{minipage}[t]{1.7in}
+   {\footnotesize \faPhone~\myphone \\
+   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
+   \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
+   \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
+    \noindent \faSitemap~\texttt{dfucci.co} \vspace{-0.03in}\\
+   \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
+  \noindent  \faTwitter~\texttt{dfucci\_}
+  }
+ \end{minipage}
+
+
+ \bigskip
+ \bigskip
+ \bigskip
+\flushleft
 %
 %% Name
 \noindent{\huge {\textsc{Davide Fucci}}}
-\reversemarginpar
 
 \medskip
 \bigskip
@@ -223,7 +222,8 @@
 \marginhead{{\vskip 0.3em}Research \newline Interests}
 % \medskip
 
-\noindent Empirical software engineering, Agile software development and testing, affective computing and psycho-physiology for software and requirements engineering. I have a strong interest in methodological aspects and empirical approaches, as well as open science.
+\noindent Software quality and testing, Requirements Engineering, application of Affective Computing to Software and Requirements Engineering.
+I have a strong interest in methodological aspects and empirical approaches, as well as open science.
 \bigskip
 \medskip
 
@@ -291,17 +291,16 @@
 \bigskip
 
 %% Teaching Experience
-\newpage
 \marginhead{Teaching \newline Experience \newline}
 \noindent {\bf Course responsible}  \dates{Spring semester 2021--2022}
 \newline\noindent Quality Assurance of Security Aware Applications\dates{Blekinge Institute of Technology}
 \bigskip
 
-\noindent {\bf Course responsible}  \dates{Spring semester 2020--2021}
+\noindent {\bf Course responsible}  \dates{Spring semester 2020--2021/2022}
 \newline\noindent Software Testing\dates{Blekinge Institute of Technology}
 \bigskip
 
-\noindent {\bf Course responsible}  \dates{Fall semester 2020--2021}
+\noindent {\bf Course responsible}  \dates{Fall semester 2020--2021/2022}
 \newline\noindent Global Software Development \dates{Blekinge Institute of Technology}
 \bigskip
 
@@ -340,6 +339,8 @@
 %% Publications: Journals
 \marginhead{Publications \newline \textit{Journals}}
 \begin{etaremune}
+\item \bibentry{FucciBCF22}
+\item \bibentry{FucciMFB22}
 \item \bibentry{FucciRFS21}
 \item \bibentry{FucciSVD21}
 \item \bibentry{FucciBCF21}
@@ -397,7 +398,7 @@
 
 %% External Service
 \bigskip
-\marginhead{External \newline Service}
+\marginhead{Service}
 
 % \noindent {\bf Committees:}
 
@@ -423,9 +424,10 @@
 
 \noindent {\bf Program Committee Member:}
 %\smallskip
-\newline\noindent {\em Intl\@. Conf. on Program Comprehension} {(\textbf{ICPC})} \dates{2021}
-\newline\noindent {\em Intl\@. Conf. on Human Aspects of Software Engineering} {(\textbf{CHASE})} \dates{2021}
-\newline\noindent {\em Intl\@. Conf. on Software Analysis, Evolution, and Re-engineering} {(\textbf{SANER})} \dates{2020}
+\newline\noindent {\em Intl\@. Conf. on Program Comprehension} {(\textbf{ICPC})} \dates{2021, 2022}
+\newline\noindent {\em Intl\@. Conf. on Human Aspects of Software Engineering} {(\textbf{CHASE})} \dates{2021, 2022}
+\newline\noindent {\em Intl\@. Conf. on Software Analysis, Evolution, and Re-engineering} {(\textbf{SANER})} \dates{2020--2022}
+\newline\noindent {\em Intl\@. Conf. on Requirements Engineering} {(\textbf{RE})} \dates{2021--2022}
 \newline\noindent {\em Intl\@. Working Conf. on RE: Foundation for Software Quality} {(\textbf{REFSQ})} \dates{2020}
 \newline\noindent {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2015--2021}
 \newline\noindent {\em Intl\@. Conf. on Evaluation and Assessment in Software Engineering} {(\textbf{EASE})} \dates{2018--2020}
@@ -437,16 +439,19 @@
 
 \noindent {\bf Reviewer:}
 \newline\noindent {\em IEEE Transactions on Software Engineering} {(\textbf{TSE})} \dates{since 2016}
-\newline\noindent {\em Requirements Engineering Journal} {(\textbf{REEN})} \dates{since 2017}
+\newline\noindent {\em IEEE Transactions on Software Engineering and Methodology} {(\textbf{TOSEM})} \dates{since 2021}
 \newline\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})} \dates{since 2015}
+\newline\noindent {\em Requirements Engineering Journal} {(\textbf{REEN})} \dates{since 2017}
 \newline\noindent {\em Information and Software Technology Journal} {(\textbf{IST})} \dates{since 2016}
 \newline\noindent {\em Journal of Software and Systems} {(\textbf{JSS})} \dates{since 2016}
+\newline\noindent {\em Software Verification Testing and Reliability Journal} {(\textbf{SVTR})} \dates{since 2020}
+\newline\noindent {\em Software Quality Journal} {(\textbf{SQJ})} \dates{since 2020}
 \newline\noindent {\em PeerJ Computer Science} {(\textbf{PeerJCS})} \dates{since 2017}
 \newline\noindent {\em IEEE Software Magazine} {(\textbf{IEEESW})} \dates{since 2019}
 \bigskip
 
 \noindent {\bf Ph.D. theses reviewer and committees}
-\newline\noindent {\em Maria Carulo ``Mining GitHub to Study Developers-related Aspects''}  {(\textbf{University of Basilicata, Italy})} \dates{2021}
+\newline\noindent {\em Maria Carulo ``Mining GitHub to Study Developers-related Aspects''} \\ {(\textbf{University of Basilicata, Italy})} \dates{2021}
 \bigskip
 
 \noindent {\bf Publicity:}
@@ -465,6 +470,7 @@
 \newline\noindent Tutoring women in their first approach to software development\bigskip
 \bigskip
 
+\marginhead{Awards}
 \noindent Best Paper Award (Industry Track), ESEM2020 \dates{2020}
 \newline\noindent Best Paper Award, SEAA2020 \dates{2020}
 \newline\noindent Open Data Recognition Award, ESEM2018 \dates{2018}
@@ -477,7 +483,8 @@
 
 
 %% Talks
-\medskip
+% \medskip
+\newpage
 \marginhead{Invited Talks}
 
 \vspace{-0.02in}
@@ -533,19 +540,17 @@
 \noindent {\bf Teemu Moisainen} \dates{10/2016--4/2017}
 \newline\noindent{\em A DataViz tool for Test-Driven Development}
 \newline\noindent{M.Sc. thesis, \textit{University of Oulu}
-\medskip
-\medskip
-
 \bigskip
+
 \marginhead{References}
-\noindent\begin{minipage}[t]{2.5in}
+\noindent\begin{minipage}[t]{2in}
 \noindent {\bf  Burak Turhan}, Full Professor
 \newline\noindent {\em University of Oulu}
 \newline\noindent \faPhone~+358 40 822 7702
 \newline\noindent \faEnvelope~burak.turhan@oulu.fi
 \end{minipage}
 \hfill
-\begin{minipage}[t]{2.5in}
+\noindent\begin{minipage}[t]{2in}
 \noindent {\bf Natalia Juristo}, Full Professor
 \newline\noindent {\em Universidad Politecnica de Madrid}
 \newline\noindent \faPhone~+34 91 336 6922
@@ -555,14 +560,14 @@
 \bigskip
 \medskip
 
-\noindent\begin{minipage}[t]{2.5in}
+\noindent\begin{minipage}[t]{2in}
   \noindent {\bf Filippo Lanubile}, Full Professor
   \newline\noindent {\em University of Bari}
   \newline\noindent \faPhone~+39 080 544 3261
   \newline\noindent \faEnvelope~lanubile@uniba.it
   \end{minipage}
 \hfill
-\noindent\begin{minipage}[t]{2.5in}
+\noindent\begin{minipage}[t]{2in}
   \noindent {\bf Walid Maalej}, Full Professor
   \newline\noindent {\em University of Hamburg}
   \newline\noindent \faPhone~+49 040 428 832073

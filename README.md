@@ -1,11 +1,11 @@
-Davide Fucci CV Template
+[Davide](Davide) Fucci CV Template
 
 
-Build  
+Build
 
-``` 
+```
 xelatex --shell-escape cv
 bibtex cv
 xelatex --shell-escape cv
-xelatex --shell-escape cv 
+xelatex --shell-escape cv
 ```
