@@ -1,206 +1,208 @@
 %%% A template to produce a nice-looking Curriculum Vitae.\\
-%%% Original by Kieran Healy <kjhealy@gmail.com>, tweaked by Heather Miller <heather.c.miller@gmail.com> (http://github.com/heathermiller/cv) and father tweaked by Davide Fucci <davfuc@gmail.com>
-%%% Most recent version is at http://github.com/dfucci/cv)
-%%%
-%%% ------------------------------------------------------------------------
-%%% Requirements (should be included in a modern tex distribution):
-%%% ------------------------------------------------------------------------
-%%% xelatex
-%%% fontspec.sty
-%%% hyperrref.sty
-%%% xunicode.sty
-%%% color.sty
-%%% url.sty
-%%% fancyhdr.sty
-%%%
-%%% ------------------------------------------------------------------------
-%%% Optional
-%%% ------------------------------------------------------------------------
-%%% git
-%%% vc.sty
-%%% revnum.sty
-%%% Fonts
-%%%
-%%% ------------------------------------------------------------------------
-%%% Note
-%%%------------------------------------------------------------------------
-%%% Because this is a hand-tweaked file, be on the look out for \medksip,
-%%% \bigskip and \newpage commands here and there, which are used to balance
-%%% the layout or avoid widows & orphans, etc. You should of course add or
-%%% remove these as needed.
-%%%------------------------------------------------------------------------
+    %%% Original by Kieran Healy <kjhealy@gmail.com>, tweaked by Heather Miller <heather.c.miller@gmail.com> (http://github.com/heathermiller/cv) and father tweaked by Davide Fucci <davfuc@gmail.com>
+    %%% Most recent version is at http://github.com/dfucci/cv)
+    %%%
+    %%% ------------------------------------------------------------------------
+    %%% Requirements (should be included in a modern tex distribution):
+      %%% ------------------------------------------------------------------------
+        %%% xelatex
+            %%% fontspec.sty
+            %%% hyperrref.sty
+            %%% xunicode.sty
+            %%% color.sty
+            %%% url.sty
+            %%% fancyhdr.sty
+            %%%
+            %%% ------------------------------------------------------------------------
+            %%% Optional
+            %%% ------------------------------------------------------------------------
+            %%% git
+            %%% vc.sty
+            %%% revnum.sty
+            %%% Fonts
+            %%%
+            %%% ------------------------------------------------------------------------
+            %%% Note
+            %%%------------------------------------------------------------------------
+            %%% Because this is a hand-tweaked file, be on the look out for \medksip,
+            %%% \bigskip and \newpage commands here and there, which are used to balance
+            %%% the layout or avoid widows & orphans, etc. You should of course add or
+            %%% remove these as needed.
+            %%%------------------------------------------------------------------------
 
-\documentclass[9pt]{article}
+            \documentclass[9pt]{article}
 
-%%%------------------------------------------------------------------------
-%%% Metadata
-%%%------------------------------------------------------------------------
+            %%%------------------------------------------------------------------------
+            %%% Metadata
+            %%%------------------------------------------------------------------------
 
-%% Change as needed. Or just add me as a coauthor. Only some of these are
-%% used below in the hyperref declaration and address banner section.
-\def\myauthor{Davide Fucci}
-\def\mytitle{Davide Fucci CV}
-\def\mycopyright{\myauthor}
-\def\mykeywords{}
-\def\mybibliostyle{plain}
-\def\mybibliocommand{}
-\def\mysubtitle{}
-\def\myaffiliation{Bleking Institute of Technology}
-\def\myaddress{Valhallavägen 1,}
-\def\myemail{davide.fucci@bth.se}
-\def\myweb{dfucci.co}
-\def\mygithub{github.com/dfucci}
-\def\mytwitter{twitter.com/dfucci\_}
-\def\myphone{+46 73-252 52 18}
-\def\mypublons{publons.com/a/930114/}
-\def\myorcid{orcid.org/0000-0002-0679-4361}
-
-
-%%%------------------------------------------------------------------------
-%%% Git version tracking
-%%%------------------------------------------------------------------------
-
-%% If you don't use git or the vc package (from CTAN), comment this out.
-%% If you comment it out, be sure to remove the \rfoot comment below, too.
-% \immediate\write18{sh ./vc}
-% \input{vc}
-
-%%%------------------------------------------------------------------------
-%%% Required style files
-%%%------------------------------------------------------------------------
-\usepackage{url,fancyhdr}
-\usepackage[ampersand]{easylist}
-\usepackage{bibentry}
-\makeatletter\let\saved@bibitem\@bibitem\makeatother
-\usepackage[leftmargin=0.23in]{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
-\usepackage{xstring}
-\usepackage{academicons}
-%% needed for xelatex to work
-\usepackage{fontspec}
-% \defaultfontfeatures{Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5}
-\usepackage{fontawesome5}
-\usepackage{xunicode}
-\usepackage{enumitem}
-
-%% color for the links
-% \usepackage[usenames,dvipsnames]{color}
-\usepackage[usenames,dvipsnames]{xcolor}
-\definecolor{DarkBlue}{HTML}{265B8C}
-% for ORCID logo
-\definecolor{orcidlogocol}{HTML}{A6CE39}
-% \newfontfamily{\FA}[Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5]{FontAwesome}
-
-%% hyperlinks
-% \usepackage[xetex,
-% 	colorlinks=true,
-% 	urlcolor=DarkBlue,
-% 	plainpages=false,
-%   	pdfpagelabels,
-%   	bookmarksnumbered,
-%   	pdftitle={\mytitle},
-%   	pagebackref,
-%   	pdfauthor={\myauthor},
-%   	pdfkeywords={\mykeywords}
-% 	  ]{hyperref}
-% \makeatletter\let\@bibitem\saved@bibitem\makeatother
-
-\usepackage{marvosym}
-
-% \usepackage{showframe}
-\usepackage[width=4.825in,top=1.7in]{geometry}
-
-%%%------------------------------------------------------------------------
-%%% Document
-%%%------------------------------------------------------------------------
-\begin{document}
-
-%% For managing publication list
-\nobibliography{mybib}
-\bibliographystyle{plain}
+            %% Change as needed. Or just add me as a coauthor. Only some of these are
+            %% used below in the hyperref declaration and address banner section.
+            \def\myauthor{Davide Fucci}
+            \def\mytitle{Davide Fucci CV}
+            \def\mycopyright{\myauthor}
+            \def\mykeywords{}
+            \def\mybibliostyle{plain}
+            \def\mybibliocommand{}
+            \def\mysubtitle{}
+            \def\myaffiliation{Bleking Institute of Technology}
+            \def\myaddress{Valhallavägen 1,}
+            \def\myemail{davide.fucci@bth.se}
+            \def\myweb{dfucci.co}
+            \def\mygithub{github.com/dfucci}
+            \def\mytwitter{twitter.com/dfucci\_}
+            \def\myphone{+46 73-252 52 18}
+            \def\mymastodon{@dfucci@mastodon.social}
+            \def\mypublons{publons.com/a/930114/}
+            \def\myorcid{orcid.org/0000-0002-0679-4361}
 
 
-%% Choose fonts for use with xelatex
-%% Minion and Myriad are widely available, from Adobe.
-%% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
-%% and is worth every penny. Any good monospace font will work fine, though.
-%% Consolas or inconsolata are good alternatives.
-\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro}
-\setsansfont[Mapping=tex-text,Colour=AA0000]{Helvetica}
-\setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata}
+            %%%------------------------------------------------------------------------
+            %%% Git version tracking
+            %%%------------------------------------------------------------------------
+
+            %% If you don't use git or the vc package (from CTAN), comment this out.
+            %% If you comment it out, be sure to remove the \rfoot comment below, too.
+            % \immediate\write18{sh ./vc}
+            % \input{vc}
+
+            %%%------------------------------------------------------------------------
+            %%% Required style files
+            %%%------------------------------------------------------------------------
+            \usepackage{url,fancyhdr}
+            \usepackage[ampersand]{easylist}
+            \usepackage{bibentry}
+            \makeatletter\let\saved@bibitem\@bibitem\makeatother
+            \usepackage[leftmargin=0.23in]{etaremune} % for reverse-numbered publications (revnumerate environment) if needed.
+            \usepackage{xstring}
+            \usepackage{academicons}
+            %% needed for xelatex to work
+            \usepackage{fontspec}
+            % \defaultfontfeatures{Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5}
+            \usepackage{fontawesome5}
+            \usepackage{xunicode}
+            \usepackage{enumitem}
+
+            %% color for the links
+            % \usepackage[usenames,dvipsnames]{color}
+            \usepackage[usenames,dvipsnames]{xcolor}
+            \definecolor{DarkBlue}{HTML}{265B8C}
+            % for ORCID logo
+            \definecolor{orcidlogocol}{HTML}{A6CE39}
+            % \newfontfamily{\FA}[Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5]{FontAwesome}
+
+            %% hyperlinks
+            % \usepackage[xetex,
+            % 	colorlinks=true,
+            % 	urlcolor=DarkBlue,
+            % 	plainpages=false,
+            %   	pdfpagelabels,
+            %   	bookmarksnumbered,
+            %   	pdftitle={\mytitle},
+            %   	pagebackref,
+            %   	pdfauthor={\myauthor},
+            %   	pdfkeywords={\mykeywords}
+            % 	  ]{hyperref}
+            % \makeatletter\let\@bibitem\saved@bibitem\makeatother
+
+            \usepackage{marvosym}
+
+            % \usepackage{showframe}
+            \usepackage[width=4.825in,top=1.7in]{geometry}
+
+            %%%------------------------------------------------------------------------
+            %%% Document
+            %%%------------------------------------------------------------------------
+            \begin{document}
+
+            %% For managing publication list
+            \nobibliography{mybib}
+            \bibliographystyle{plain}
 
 
-%%%------------------------------------------------------------------------
-%%% Local commands
-%%%------------------------------------------------------------------------
+            %% Choose fonts for use with xelatex
+            %% Minion and Myriad are widely available, from Adobe.
+            %% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
+            %% and is worth every penny. Any good monospace font will work fine, though.
+            %% Consolas or inconsolata are good alternatives.
+            \setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro}
+            \setsansfont[Mapping=tex-text,Colour=AA0000]{Helvetica}
+            \setmonofont[Mapping=tex-text,Scale=0.9]{Inconsolata}
 
-%% Marginal header
-%% Note: as the document goes on you may need to introduce a (gradually increasing)
-%% \vspace element to keep the marginal header pleasingly aligned with the first
-%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
-%% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
-\newcommand{\marginhead}[1]{\marginpar{\textsf{{\normalsize\vspace{-1em}\flushright{\textcolor{RubineRed}#1}}}}}
 
-\newcommand{\dates}[1]{\hfill \emph{#1}}
+            %%%------------------------------------------------------------------------
+            %%% Local commands
+            %%%------------------------------------------------------------------------
+
+            %% Marginal header
+            %% Note: as the document goes on you may need to introduce a (gradually increasing)
+            %% \vspace element to keep the marginal header pleasingly aligned with the first
+            %% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or
+            %% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
+            \newcommand{\marginhead}[1]{\marginpar{\textsf{{\normalsize\vspace{-1em}\flushright{\textcolor{RubineRed}#1}}}}}
+
+            \newcommand{\dates}[1]{\hfill \emph{#1}}
 
 %% custom ampersand (font consistent with the one chosen above)
-\newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro}\selectfont\&\,}}
+  \newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro}\selectfont\&\,}}
 
-%% No bullets on labels
-\renewcommand{\labelitemi}{~}
-\newcommand{\myname}[1]{\textbf{\underline{Davide Fucci}}}
-%% Custom hanging indent for vita items
-\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
-%\def\ind{\hangindent=18pt\hangafter=1 \noindent}
-\def\labelitemi{~}
-\renewcommand{\labelitemii}{~}
-\renewcommand{\labelenumi}{\S\theenumi.}
-%%%------------------------------------------------------------------------
-%%% Page layout
-%%%------------------------------------------------------------------------
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead{}
-\fancyfoot{}
-\rhead{{\scriptsize\thepage}}
+  %% No bullets on labels
+  \renewcommand{\labelitemi}{~}
+  \newcommand{\myname}[1]{\textbf{\underline{Davide Fucci}}}
+  %% Custom hanging indent for vita items
+  \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+  %\def\ind{\hangindent=18pt\hangafter=1 \noindent}
+  \def\labelitemi{~}
+  \renewcommand{\labelitemii}{~}
+  \renewcommand{\labelenumi}{\S\theenumi.}
+  %%%------------------------------------------------------------------------
+  %%% Page layout
+  %%%------------------------------------------------------------------------
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead{}
+  \fancyfoot{}
+  \rhead{{\scriptsize\thepage}}
 
-% \setlength{\headsep}{12pt}
-\textheight=580pt
-\raggedbottom
-\thispagestyle{fancy}
-%% git revision control footer
-% \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package: for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
+  % \setlength{\headsep}{12pt}
+  \textheight=580pt
+  \raggedbottom
+  \thispagestyle{fancy}
+  %% git revision control footer
+  % \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package: for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 
-% %%%------------------------------------------------------------------------
-% %%% Address and contact block
-% %%%------------------------------------------------------------------------
- % \begin{absolutelynopagebreak}
-\reversemarginpar
- \noindent\textsc{Address and contacts}\\
- \begin{minipage}[t]{2in}
- {\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
- \noindent Department of Software Engineering \vspace{-0.04in}\\
- \noindent Blekinge Institute of Technology \vspace{-0.01in}\\
- \noindent Valhallavägen 1 \vspace{-0.04in}\\
- \noindent Karlskrona, 37141 \vspace{-0.04in}\\
- \noindent Sweden
- }
- \end{minipage}
- \begin{minipage}[t]{1.7in}
-   {\footnotesize \faPhone~\myphone \\
-   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
-   \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
-   \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
+  % %%%------------------------------------------------------------------------
+  % %%% Address and contact block
+  % %%%------------------------------------------------------------------------
+  % \begin{absolutelynopagebreak}
+  \reversemarginpar
+  \noindent\textsc{Address and contacts}\\
+    \begin{minipage}[t]{2in}
+{\footnotesize Software Engineering Research Lab\vspace{-0.04in}\\
+  \noindent Department of Software Engineering \vspace{-0.04in}\\
+    \noindent Blekinge Institute of Technology \vspace{-0.01in}\\
+    \noindent Valhallavägen 1 \vspace{-0.04in}\\
+    \noindent Karlskrona, 37141 \vspace{-0.04in}\\
+    \noindent Sweden
+}
+\end{minipage}
+\begin{minipage}[t]{1.7in}
+{\footnotesize \faPhone~\myphone \\
+  \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
+    \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
+    \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
     \noindent \faSitemap~\texttt{dfucci.co} \vspace{-0.03in}\\
-   \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
-  \noindent  \faTwitter~\texttt{dfucci\_}
-  }
- \end{minipage}
+    \noindent \faGithub~\texttt{dfucci} \vspace{-0.03in}\\
+    \noindent  \faTwitter~\texttt{dfucci\_}\vspace{-0.03in}\\
+  \noindent  \faMastodon~\texttt{\mymastodon}
+}
+\end{minipage}
 
 
- \bigskip
- \bigskip
- \bigskip
+\bigskip
+\bigskip
+\bigskip
 \flushleft
 %
 %% Name
@@ -209,13 +211,13 @@
 \medskip
 \bigskip
 
- %% Citizenship
+%% Citizenship
 % \medskip
- \marginhead{Citizenship}
+\marginhead{Citizenship}
 
- \noindent Italian
+\noindent Italian
 
- \medskip
+\medskip
 
 %% Research Interests
 \textheight=580pt
@@ -439,6 +441,7 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 
 \noindent {\bf Conference Program Committee Member:}
 %\smallskip
+\newline\noindent {\em Intl\@. Conf\@. on Software Engineering} {(\textbf{ICSE})} \dates{2025}
 \newline\noindent {\em Intl\@. Conf\@. on Program Comprehension} {(\textbf{ICPC})} \dates{2021, 2022}
 \newline\noindent {\em Intl\@. Conf\@. on Human Aspects of Software Engineering} {(\textbf{CHASE})} \dates{2021--2023}
 \newline\noindent {\em Intl\@. Conf\@. on Software Analysis, Evolution, and Re-engineering} {(\textbf{SANER})} \dates{2020--2023}
@@ -568,71 +571,71 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \noindent {\bf Nayla Nassir}\dates{06/2020--01/2021}
 \newline\noindent{Acceptance Testing in Agile Software Development}
 \newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
-\medskip
+  \medskip
 
-\noindent {\bf Abhinav Ram Kola}\dates{02/2020--09/2020}
-\newline\noindent{Customer communication challenges in Agile Requirements Engineering}
-\newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
-\medskip
+    \noindent {\bf Abhinav Ram Kola}\dates{02/2020--09/2020}
+  \newline\noindent{Customer communication challenges in Agile Requirements Engineering}
+  \newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
+    \medskip
 
-\noindent {\bf Nynesh Reddy Gujjula}\dates{02/2020--09/2020}
-\newline\noindent{Practices and Advantages of Submitting Images in OSS projects}
-\newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
-\medskip
+      \noindent {\bf Nynesh Reddy Gujjula}\dates{02/2020--09/2020}
+    \newline\noindent{Practices and Advantages of Submitting Images in OSS projects}
+    \newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
+      \medskip
 
-\noindent {\bf Yujie Huang \& Qianneng Wang}\dates{02/2020--09/2020}
-\newline\noindent{Identification and Management of Requirements Debt}
-\newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
-\medskip
+        \noindent {\bf Yujie Huang \& Qianneng Wang}\dates{02/2020--09/2020}
+      \newline\noindent{Identification and Management of Requirements Debt}
+      \newline\noindent{M.Sc. thesis, \textit{Blekinge Institute of Technology}
+        \medskip
 
-\noindent {\bf Alireza Mollaalizadehbahnemiri}\dates{10/2017--02/2018}
-\newline\noindent{\em Knowledge Extraction from API Reference Documentation Using Deep Learning}
-\newline\noindent{M.Sc. thesis, \textit{University of Hamburg}
-\medskip
+          \noindent {\bf Alireza Mollaalizadehbahnemiri}\dates{10/2017--02/2018}
+        \newline\noindent{\em Knowledge Extraction from API Reference Documentation Using Deep Learning}
+        \newline\noindent{M.Sc. thesis, \textit{University of Hamburg}
+          \medskip
 
-\noindent {\bf Alexander Oeser} \dates{8/2017--1/2018}
-\newline\noindent{\em Finding, Understanding, and Enriching Developers Screencast on YouTube}
-\newline\noindent{M.Sc. thesis, \textit{University of Hamburg}
-\medskip
+            \noindent {\bf Alexander Oeser} \dates{8/2017--1/2018}
+          \newline\noindent{\em Finding, Understanding, and Enriching Developers Screencast on YouTube}
+          \newline\noindent{M.Sc. thesis, \textit{University of Hamburg}
+            \medskip
 
-\noindent {\bf Teemu Moisainen} \dates{10/2016--4/2017}
-\newline\noindent{\em A DataViz tool for Test-Driven Development}
-\newline\noindent{M.Sc. thesis, \textit{University of Oulu}
-\bigskip
+              \noindent {\bf Teemu Moisainen} \dates{10/2016--4/2017}
+            \newline\noindent{\em A DataViz tool for Test-Driven Development}
+            \newline\noindent{M.Sc. thesis, \textit{University of Oulu}
+              \bigskip
 
-\marginhead{References}
-\noindent\begin{minipage}[t]{2in}
-\noindent {\bf  Burak Turhan}, Full Professor
-\newline\noindent {\em University of Oulu}
-\newline\noindent \faPhone~+358 40 822 7702
-\newline\noindent \faEnvelope~burak.turhan@oulu.fi
-\end{minipage}
-\hfill
-\noindent\begin{minipage}[t]{2in}
-\noindent {\bf Natalia Juristo}, Full Professor
-\newline\noindent {\em Universidad Politecnica de Madrid}
-\newline\noindent \faPhone~+34 91 336 6922
-\newline\noindent \faEnvelope~natalia@fi.upm.es
-\end{minipage}
+                \marginhead{References}
+              \noindent\begin{minipage}[t]{2in}
+              \noindent {\bf  Burak Turhan}, Full Professor
+                \newline\noindent {\em University of Oulu}
+              \newline\noindent \faPhone~+358 40 822 7702
+                \newline\noindent \faEnvelope~burak.turhan@oulu.fi
+                \end{minipage}
+              \hfill
+                \noindent\begin{minipage}[t]{2in}
+              \noindent {\bf Natalia Juristo}, Full Professor
+                \newline\noindent {\em Universidad Politecnica de Madrid}
+              \newline\noindent \faPhone~+34 91 336 6922
+                \newline\noindent \faEnvelope~natalia@fi.upm.es
+                \end{minipage}
 
-\bigskip
-\medskip
+              \bigskip
+                \medskip
 
-\noindent\begin{minipage}[t]{2in}
-  \noindent {\bf Filippo Lanubile}, Full Professor
-  \newline\noindent {\em University of Bari}
-  \newline\noindent \faPhone~+39 080 544 3261
-  \newline\noindent \faEnvelope~lanubile@uniba.it
-  \end{minipage}
-\hfill
-\noindent\begin{minipage}[t]{2in}
-  \noindent {\bf Walid Maalej}, Full Professor
-  \newline\noindent {\em University of Hamburg}
-  \newline\noindent \faPhone~+49 040 428 832073
-  \newline\noindent \faEnvelope maalej@informatik.uni-hamburg.de
-  \end{minipage}
+                \noindent\begin{minipage}[t]{2in}
+              \noindent {\bf Filippo Lanubile}, Full Professor
+                \newline\noindent {\em University of Bari}
+              \newline\noindent \faPhone~+39 080 544 3261
+                \newline\noindent \faEnvelope~lanubile@uniba.it
+                \end{minipage}
+              \hfill
+                \noindent\begin{minipage}[t]{2in}
+              \noindent {\bf Walid Maalej}, Full Professor
+                \newline\noindent {\em University of Hamburg}
+              \newline\noindent \faPhone~+49 040 428 832073
+                \newline\noindent \faEnvelope maalej@informatik.uni-hamburg.de
+                \end{minipage}
 
-  \begin{center}
-    {\scriptsize  Last updated: \today\ }
-    \end{center}
-\end{document}
+              \begin{center}
+              {\scriptsize  Last updated: \today\ }
+              \end{center}
+              \end{document}
