@@ -1,4 +1,4 @@
-[Davide](Davide) Fucci CV Template
+Davide Fucci CV Template
 
 
 Build
