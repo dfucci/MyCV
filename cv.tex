@@ -63,10 +63,6 @@
             %%% Git version tracking
             %%%------------------------------------------------------------------------
 
-            %% If you don't use git or the vc package (from CTAN), comment this out.
-            %% If you comment it out, be sure to remove the \rfoot comment below, too.
-            % \immediate\write18{sh ./vc}
-            % \input{vc}
 
             %%%------------------------------------------------------------------------
             %%% Required style files
@@ -80,36 +76,19 @@
             \usepackage{academicons}
             %% needed for xelatex to work
             \usepackage{fontspec}
-            % \defaultfontfeatures{Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5}
             \usepackage{fontawesome5}
             \usepackage{xunicode}
             \usepackage{enumitem}
 
             %% color for the links
-            % \usepackage[usenames,dvipsnames]{color}
             \usepackage[usenames,dvipsnames]{xcolor}
             \definecolor{DarkBlue}{HTML}{265B8C}
             % for ORCID logo
             \definecolor{orcidlogocol}{HTML}{A6CE39}
-            % \newfontfamily{\FA}[Path = /usr/local/texlive/2021/texmf-dist/fonts/opentype/public/fontawesome5]{FontAwesome}
 
-            %% hyperlinks
-            % \usepackage[xetex,
-            % 	colorlinks=true,
-            % 	urlcolor=DarkBlue,
-            % 	plainpages=false,
-            %   	pdfpagelabels,
-            %   	bookmarksnumbered,
-            %   	pdftitle={\mytitle},
-            %   	pagebackref,
-            %   	pdfauthor={\myauthor},
-            %   	pdfkeywords={\mykeywords}
-            % 	  ]{hyperref}
-            % \makeatletter\let\@bibitem\saved@bibitem\makeatother
 
             \usepackage{marvosym}
 
-            % \usepackage{showframe}
             \usepackage[width=4.825in,top=1.7in]{geometry}
 
             %%%------------------------------------------------------------------------
@@ -154,7 +133,6 @@
   \newcommand{\myname}[1]{\textbf{\underline{Davide Fucci}}}
   %% Custom hanging indent for vita items
   \def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
-  %\def\ind{\hangindent=18pt\hangafter=1 \noindent}
   \def\labelitemi{~}
   \renewcommand{\labelitemii}{~}
   \renewcommand{\labelenumi}{\S\theenumi.}
@@ -167,18 +145,11 @@
   \fancyfoot{}
   \rhead{{\scriptsize\thepage}}
 
-  % \setlength{\headsep}{12pt}
   \textheight=580pt
   \raggedbottom
   \thispagestyle{fancy}
-  %% git revision control footer
-  % \rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package: for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
 
 
-  % %%%------------------------------------------------------------------------
-  % %%% Address and contact block
-  % %%%------------------------------------------------------------------------
-  % \begin{absolutelynopagebreak}
   \reversemarginpar
   \noindent\textsc{Address and contacts}\\
     \begin{minipage}[t]{2in}
@@ -194,13 +165,10 @@
 {\footnotesize \faPhone~\myphone \\
   \noindent \faEnvelope~\texttt{\myemail}\vspace{-0.03in}\\
     \noindent \aiOrcid~\texttt{\myorcid} \vspace{-0.03in}\\
-    % \noindent \aiPublonsSquare~\texttt{\mypublons} \vspace{-0.03in}\\
     \noindent \aiGoogleScholar~\texttt{\mygscholar} \vspace{-0.20in}\\
     \noindent \faSitemap~\texttt{\myweb} \vspace{-0.03in}\\
     \noindent \faGithub~\texttt{\mygithub} \vspace{-0.03in}\\
     \noindent  \faLinkedin~\texttt{\mylinkedin}\vspace{-0.03in}\\
-    % \noindent  \faTwitter~\texttt{dfucci\_}\vspace{-0.03in}\\
-    % \noindent  \faMastodon~\texttt{\mymastodon}
 }
 \end{minipage}
 
@@ -209,7 +177,6 @@
 \bigskip
 \bigskip
 \flushleft
-%
 %% Name
 \noindent{\huge {\textsc{Davide Fucci}}}
 
@@ -217,7 +184,6 @@
 \bigskip
 
 %% Citizenship
-% \medskip
 \marginhead{Citizenship}
 
 \noindent Italian
@@ -227,7 +193,6 @@
 %% Research Interests
 \textheight=580pt
 \marginhead{{\vskip 0.3em}Research \newline Interests}
-% \medskip
 
 \noindent Software quality, testing, and application security with a focus on software supply-chain. Data-driven Requirements Engineering. Application of Affective Computing to Software and Requirements Engineering.
 Strong interest in methodological aspects and empirical approaches, as well as open science.
@@ -361,6 +326,7 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 %% Publications: Journals
 \marginhead{Publications \newline \textit{Journals}}
 \begin{etaremune}
+\item \bibentry{FucciNFMA26}
 \item \bibentry{FucciKZF25}
 \item \bibentry{FucciKEG25}
 \item \bibentry{FucciPGM25}
@@ -443,12 +409,13 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \end{etaremune}
 %% External \itemrvice
 \marginhead{Service \newline \textit{Scientific events}}
-% \noindent {\bf Committees:}
 
 \noindent {\bf Main Organizer:}
+\newline\noindent {\em BTH Software Engineering Research Lab Conference} {(\textbf{SERLConf})} \dates{2026}
+\smallskip
 \newline\noindent {\em 4th Intl\@. Workshop on Multi-disciplinary, Open, and RElevant Requirements Engineering} {(\textbf{MO2RE})} \dates{2027}
 \smallskip
-\newline\noindent {\em 3nd Intl\@. Workshop on Multi-disciplinary, Open, and RElevant Requirements Engineering} {(\textbf{MO2RE})} \dates{2026}
+\newline\noindent {\em 3rd Intl\@. Workshop on Multi-disciplinary, Open, and RElevant Requirements Engineering} {(\textbf{MO2RE})} \dates{2026}
 \smallskip
 \newline\noindent {\em 2nd Intl\@. Workshop on Multi-disciplinary, Open, and RElevant Requirements Engineering} {(\textbf{MO2RE})} \dates{2025}
 \smallskip
@@ -466,10 +433,8 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \bigskip
 
 \noindent {\bf Committee Member:}
-%\smallskip
-\newline {\em Intl\@. Conference on Requirements Engineering} {(\textbf{RE})} \dates{2025}
-\newline {\em Intl\@. Conference on Software Engineering} {(\textbf{ICSE})} \dates{2021}
-% \smallskip
+\newline {\em Intl\@. Conf\@. on Requirements Engineering} {(\textbf{RE})} \dates{2025, 2027}
+\newline {\em Intl\@. Conf\@. on Software Engineering} {(\textbf{ICSE})} \dates{2021}
 \newline {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2018, 2023, 2024}
 \bigskip
 
@@ -486,21 +451,21 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \newline\noindent {\em Intl\@. Working Conf\@. on RE: Foundation for Software Quality} {(\textbf{REFSQ})} \dates{2020, 2023}
 \newline\noindent {\em Intl\@. Symposium on Empirical Software Engineering and Measurement} {(\textbf{ESEM})} \dates{2015--2026}
 \newline\noindent {\em Intl\@. Conf\@. on Evaluation and Assessment in Software Engineering} {(\textbf{EASE})} \dates{2018--2020, 2023, 2024}
-\newline\noindent {\em Intl\@. Conference on Software and System Processes} {(\textbf{ICSSP})} \dates{2016--2020}
-\newline\noindent {\em Intl\@. Conf\@. on on Product-Focused Software Process Improvement} {(\textbf{PROFES})} \dates{2018--2020}
+\newline\noindent {\em Intl\@. Conf\@. on Software and System Processes} {(\textbf{ICSSP})} \dates{2016--2020}
+\newline\noindent {\em Intl\@. Conf\@. on Product-Focused Software Process Improvement} {(\textbf{PROFES})} \dates{2018--2020}
 \newline\noindent {\em Software Engineering and Advanced Applications} {(\textbf{SEAA})} \dates{2018}
-\newline\noindent {\em Intl\@. Conference on Extreme Programming} {(\textbf{XP})} \dates{2014}
+\newline\noindent {\em Intl\@. Conf\@. on Extreme Programming} {(\textbf{XP})} \dates{2014}
 \bigskip
 
 \noindent {\bf Journals:}
 \newline\noindent {\em IEEE Security and Privacy} {(\textbf{S\&P})} \dates{since 2026}
 \newline\noindent {\em ACM Computing Surveys} {(\textbf{CSUR})} \dates{since 2025}
 \newline\noindent {\em IEEE Transactions on Software Engineering} {(\textbf{TSE})} \dates{since 2016}
-\newline\noindent {\em IEEE Transactions on Software Engineering and Methodology} {(\textbf{TOSEM})} \dates{since 2021}
+\newline\noindent {\em ACM Transactions on Software Engineering and Methodology} {(\textbf{TOSEM})} \dates{since 2021}
 \newline\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})} \dates{since 2015}
 \newline\noindent {\em Requirements Engineering Journal} {(\textbf{REEN})} \dates{since 2017}
 \newline\noindent {\em Information and Software Technology Journal} {(\textbf{IST})} \dates{since 2016}
-\newline\noindent {\em Journal of Software and Systems} {(\textbf{JSS})} \dates{since 2016}
+\newline\noindent {\em Journal of Systems and Software} {(\textbf{JSS})} \dates{since 2016}
 \newline\noindent {\em Software Verification Testing and Reliability Journal} {(\textbf{SVTR})} \dates{since 2020}
 \newline\noindent {\em Software Quality Journal} {(\textbf{SQJ})} \dates{since 2020}
 \newline\noindent {\em PeerJ Computer Science} {(\textbf{PeerJCS})} \dates{since 2017}
@@ -513,9 +478,13 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \marginhead{Service \newline \textit{Assoc.\ Editor}}
 \newline\noindent {\em Automated Software Engineering journal} {(\textbf{ASE})} \\ {Springer Nature} \dates{since 2026}
 \bigskip
+\newpage
+\marginhead{Service \newline \textit{Special Issue Editor}}
+\noindent {\em Empirical Software Engineering Journal} {(\textbf{EMSE})} \\ {Springer Nature} \dates{2026}
+\newline\noindent Special Issue on ``Human-Centered AI Transformation for Software Engineering''
+\bigskip
 \marginhead{Service \newline \textit{Committees}}
-\newline\noindent Hiring committee member for Tenure-track Assistant Professor \\ {(Chalmers | University of Gothenbourg, Sweden)} \dates{Apr, 2025}
-% \newline\noindent Hiring committee member for Tenure-track Assistant Professor \\ {(Chalmers | University of Gothenbourg, Sweden)} \dates{Apr, 2025}
+\newline\noindent Hiring committee member for Tenure-track Assistant Professor \\ {(Chalmers | University of Gothenburg, Sweden)} \dates{Apr, 2025}
 \medskip
 
 \noindent {\bf Ph.D. Theses Reviewer and Committees Member:}
@@ -526,7 +495,7 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 \medskip
 \newline\noindent {\em Saad Ezzini ``Artificial Intelligence-enabled Automation for Ambiguity Handling and Question Answering in Natural-Language Requirements''} \\ {(\textbf{University of Luxembourg, Luxembourg})} \dates{Sep, 2022}
 \medskip
-\newline\noindent {\em Marti Manzano Aguilar ``Specification, Assessment and Monitoring of Quality-Related Software Strategic Indicators in Agile Software Development''} \\ {(\textbf{Politechnic University of Catalunya, Spain})} \dates{Jan, 2023}
+\newline\noindent {\em Marti Manzano Aguilar ``Specification, Assessment and Monitoring of Quality-Related Software Strategic Indicators in Agile Software Development''} \\ {(\textbf{Polytechnic University of Catalunya, Spain})} \dates{Jan, 2023}
 \medskip
 \newline\noindent {\em Maria Carulo ``Mining GitHub to Study Developers-related Aspects''} \\ {(\textbf{University of Basilicata, Italy})} \dates{May, 2021}
 \bigskip
@@ -563,7 +532,6 @@ Strong interest in methodological aspects and empirical approaches, as well as o
 
 
 %% Talks
-% \medskip
 \marginhead{Invited Talks}
 
 \vspace{-0.02in}
